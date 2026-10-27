@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12">
+<title>ClipForge Mobile — YouTube Shorts Finder</title>
+<style>
+:root{--bg:#0b0d12;--panel:#141a25;--line:#2c3748;--text:#f4f7fb;--muted:#9ba8ba;--green:#a3ff6f;--red:#ff9999;--gold:#f1d69b}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(700px 400px at 90% -10%,#1d3040 0,transparent 65%),var(--bg);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial}.wrap{max-width:760px;margin:auto;padding:18px 14px calc(35px + env(safe-area-inset-bottom))}.top{display:flex;align-items:center;gap:11px;margin:5px 0 24px}.logo{height:42px;width:42px;border-radius:14px;background:var(--green);color:#10150e;display:grid;place-items:center;font-weight:900;font-size:20px}.brand{font-size:19px;font-weight:850;letter-spacing:-.5px}.subbrand{font-size:10px;letter-spacing:1.8px;color:var(--green);font-weight:800}.hero h1{font-size:clamp(33px,9vw,47px);line-height:1.02;letter-spacing:-1.8px;margin:0 0 12px}.hero h1 span{color:var(--green)}.hero p{color:var(--muted);font-size:14px;margin:0 0 22px}.panel{background:linear-gradient(180deg,#151b26,#11151d);border:1px solid var(--line);border-radius:18px;padding:18px;margin:14px 0}.panel h2{font-size:17px;margin:0 0 4px}.desc{font-size:12px;color:var(--muted);margin:0 0 17px}.field{margin-bottom:14px}.field label{display:block;font-size:12px;font-weight:750;color:#dce4ed;margin-bottom:7px}.input,select,textarea{width:100%;border:1px solid #303b4d;background:#0b0f16;color:var(--text);padding:13px;border-radius:11px;font:inherit;outline:none}.input:focus,select:focus,textarea:focus{border-color:var(--green)}textarea{min-height:100px;resize:vertical}.hint{font-size:11px;color:#8290a2;margin-top:6px}.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn{border:0;border-radius:11px;padding:13px 15px;font:inherit;font-weight:850;cursor:pointer}.primary{background:var(--green);color:#111;width:100%}.secondary{background:#202938;color:#eef4fa;border:1px solid #354255}.btnrow{display:flex;gap:9px;margin-top:9px}.btnrow .btn{flex:1}.btn:disabled{opacity:.55}.status{display:none;margin-top:13px;padding:12px;border:1px solid #354255;background:#0c1118;border-radius:11px;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}.status.show{display:block}.status.error{border-color:#6c393d;color:#ffc1c1}.status.good{border-color:#41623e;color:#dcffd2}.status.warn{border-color:#67552c;color:#f1dba8}.clips{display:none}.clips.show{display:block}.clip{border-top:1px solid var(--line);padding:14px 0}.cliptop{display:flex;gap:10px;align-items:flex-start}.score{color:var(--green);font-size:20px;font-weight:900;min-width:45px}.clip h3{font-size:14px;margin:1px 0 5px}.clip p{font-size:12px;color:var(--muted);margin:5px 0}.tag{display:inline-block;border:1px solid #3a4657;border-radius:7px;padding:3px 7px;font-size:10px;margin:3px 4px 0 0;color:#d8e2ec}.clip a{color:var(--green);font-size:12px}.overlay-preview{margin:10px 0 8px;min-height:110px;border:1px solid #384456;border-radius:12px;background:linear-gradient(145deg,#24323b,#10141b);display:flex;align-items:flex-start;justify-content:center;padding:14px 10px;position:relative;overflow:hidden}.overlay-preview:after{content:'VIDEO PREVIEW';position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#ffffff55;font-size:9px;letter-spacing:2px}.overlay-headline{position:relative;z-index:1;max-width:100%;background:#080b10e8;border:1px solid #a3ff6f;border-radius:8px;padding:8px 10px;color:#fff;font-size:13px;font-weight:900;line-height:1.2;text-align:center;text-transform:uppercase;text-shadow:0 2px 3px #000;overflow-wrap:anywhere}.note{padding:12px;border-radius:11px;background:#211e15;border:1px solid #51452a;color:#ddcda8;font-size:11px}.progress{height:6px;background:#273142;border-radius:9px;overflow:hidden;margin-top:12px;display:none}.progress.show{display:block}.bar{height:100%;width:0;background:var(--green);transition:width .3s}.small{font-size:11px;color:#77869a}.footer{text-align:center;font-size:10px;color:#687589;margin-top:24px}.link{color:var(--green)}.hidden{display:none!important}
+</style></head>
+<body><main class="wrap">
+<header class="top"><div class="logo">▶</div><div><div class="brand">ClipForge <span style="color:var(--green)">Mobile</span></div><div class="subbrand">YOUTUBE SHORTS FINDER</div></div></header>
+<section class="hero"><h1>Find the Best Moments.<br><span>Plan Your Shorts.</span></h1><p>Paste a YouTube link to find highlight timestamps. Export MP4 clips with audio and no text overlays in vertical 9:16 format.</p></section>
+<section class="panel"><h2>1 · Connect Supadata</h2><p class="desc">Only a Supadata API key is required. No Gemini key is needed.</p>
+<div class="field"><label for="supakey">Supadata API Key</label><input class="input" id="supakey" type="password" value="sd_89fd32f2c79d5d05ccb6912f0c4a4179" placeholder="Paste your Supadata API key" autocomplete="off"><div class="hint">API key is pre-filled in this file. Keep this HTML private: anyone who receives it can inspect the embedded key. Provider usage limits or charges may apply.</div></div>
+</section>
+<section class="panel"><h2>2 · Analyze YouTube Video</h2><p class="desc">Find potential highlights from the transcript. Ranking runs locally in your browser.</p>
+<div class="field"><label for="url">YouTube Video URL</label><input class="input" id="url" type="url" placeholder="Paste a YouTube video link" inputmode="url"><div class="hint">Use content you own or have permission to use.</div></div>
+<div class="two"><div class="field"><label for="count">Number of Clips</label><select id="count"><option>3</option><option selected>5</option><option>8</option><option>10</option></select></div><div class="field"><label for="length">Clip Duration</label><select id="length"><option value="20-35">20–35 seconds</option><option value="30-60" selected>30–60 seconds</option><option value="45-90">45–90 seconds</option></select></div></div>
+<div class="field"><label for="lang">Transcript Language (Optional)</label><input class="input" id="lang" placeholder="Auto, en, or hi"></div>
+<button class="btn primary" id="analyze">✨ Find Best Moments</button><div class="progress" id="progress"><div class="bar" id="bar"></div></div><div class="status" id="status" role="status"></div>
+</section>
+<section class="panel"><h2>3 · Vertical Format & Video Export</h2><p class="desc">Highlight detection works from a YouTube link. Actual video export requires access to the source video; Supadata provides transcript data, not the video file.</p><div class="field"><label for="sourceVideo">Source Video File (for rendering)</label><input class="input" id="sourceVideo" type="file" accept="video/*"><div class="hint" id="fileHint">Select a video file you own or have permission to use.</div></div><div class="field"><label for="fitMode">9:16 Layout</label><select id="fitMode"><option value="blur" selected>Blur Background — show the full frame</option><option value="zoom">Zoom / Crop — fill the screen</option></select></div><div class="field"><label for="qualityMode">Export Quality</label><select id="qualityMode"><option value="high" selected>High Quality — 1080 × 1920</option><option value="max">Maximum Browser Quality — 1440 × 2560</option></select><div class="hint">The browser encodes H.264 MP4 with AAC audio using FFmpeg. Maximum mode uses a higher resolution and may need more phone memory.</div></div><div class="hint">Keep this page open while rendering. No text or headline will be added to exported clips.</div><video id="sourcePlayer" playsinline preload="metadata" style="position:fixed;left:-9999px;top:0;width:2px;height:2px;opacity:.01;pointer-events:none"></video><div class="status" id="renderStatus" role="status"></div></section>
+<section class="panel clips" id="results"><h2>4 · Suggested Highlights</h2><p class="desc">Each highlight includes its timestamp, a source link and a video export button. Exported clips contain no text overlays.</p><div id="cliplist"></div><div class="btnrow"><button class="btn secondary" id="export">Download Clip List</button><button class="btn secondary" id="copy">Copy Timestamps</button></div></section>
+<section class="panel"><h2>4 · Paste a Transcript Manually</h2><p class="desc">If the transcript API fails, paste a transcript that includes timestamps.</p><div class="field"><label for="transcript">Timestamped Transcript</label><textarea id="transcript" placeholder="[00:00:12] First line here...&#10;[00:00:24] Next moment here..."></textarea></div><button class="btn secondary" id="manual" style="width:100%">Rank Transcript</button></section>
+<div class="note"><b>Important limitation:</b> A YouTube URL plus a Supadata API key cannot produce a downloadable video clip by itself. Supadata returns transcript data, not the video file. To render a 9:16 MP4 clip in this standalone app, select a source video file you are authorized to use. The exported video has no headings or text overlays.</div>
+<div class="footer">ClipForge Mobile · Browser-based tool · API key is embedded in this HTML file; keep the file private</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);let ranked=[];
+function setStatus(msg,kind=''){const e=$('status');e.textContent=msg;e.className='status show '+kind}
+function prog(n){$('progress').classList.add('show');$('bar').style.width=Math.max(0,Math.min(100,n))+'%'}
+function isYT(s){try{let u=new URL(s);return ['youtube.com','www.youtube.com','m.youtube.com','youtu.be'].includes(u.hostname)}catch(e){return false}}
+function timeStr(sec){sec=Math.max(0,Math.floor(Number(sec)||0));return String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')}
+function parseTranscript(d){
+ let chunks=d?.content||d?.transcript||d?.data?.content||[];
+ if(typeof chunks==='string')return chunks;
+ if(!Array.isArray(chunks))return JSON.stringify(chunks);
+ return chunks.map(c=>{let ms=c.offset??c.start??c.startTime??0;let sec=Number(ms);if(sec>10000)sec/=1000;let dur=Number(c.duration??0);if(dur>10000)dur/=1000;return `[${timeStr(sec)}] ${c.text||c.content||''}`}).join('\n');
+}
+async function getTranscript(){
+ const key=$('supakey').value.trim(),url=$('url').value.trim(),lang=$('lang').value.trim();
+ if(!key)throw Error('Enter your Supadata API key first.');
+ const params=new URLSearchParams({url});if(lang)params.set('lang',lang);
+ let r=await fetch('https://api.supadata.ai/v1/transcript?'+params.toString(),{headers:{'x-api-key':key}});
+ let d=await r.json().catch(()=>({}));
+ if(!r.ok)throw Error(d.message||d.error||('Transcript API returned HTTP '+r.status));
+ if(d.jobId){
+  setStatus('Preparing transcript…');
+  for(let i=0;i<24;i++){await new Promise(res=>setTimeout(res,2000));let pr=await fetch('https://api.supadata.ai/v1/transcript/'+encodeURIComponent(d.jobId),{headers:{'x-api-key':key}});d=await pr.json().catch(()=>({}));if(!pr.ok)throw Error(d.message||'Transcript job failed');if(d.status==='completed'||d.content)break;if(d.status==='failed')throw Error(d.error||'Transcript generation failed');}
+ }
+ const t=parseTranscript(d);if(!t||t.length<30)throw Error('No usable transcript returned. Try a video with captions or paste the transcript manually.');return t;
+}
+function timestampedTranscript(raw){
+ // If transcript lines lack times, preserve it but AI will be asked to infer only when possible.
+ return raw.trim().slice(0,100000);
+}
+async function rankLocally(transcript){
+ // Heuristic ranking from timestamped transcript lines. Return exactly the requested
+ // count when enough distinct timestamped candidates exist.
+ const lines=transcript.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+ const parseTime=s=>{
+   let m=s.match(/\[(\d{1,2}):(\d{2})(?::(\d{2}))?\]/)||s.match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?/);
+   if(!m)return null;
+   if(m[3]!==undefined)return Number(m[1])*3600+Number(m[2])*60+Number(m[3]);
+   return Number(m[1])*60+Number(m[2]);
+ };
+ const rows=[];
+ for(const line of lines){
+   const sec=parseTime(line); if(sec===null)continue;
+   const text=line.replace(/^\[?\d{1,2}:\d{2}(?::\d{2})?\]?\s*/,'').trim();
+   if(text.length>=8)rows.push({sec,text});
+ }
+ if(rows.length<2)throw Error('Not enough timestamped lines. Add lines such as [00:12] Spoken dialogue here.');
+ rows.sort((a,b)=>a.sec-b.sec);
+ const target=$('length').value.split('-').map(Number), targetSec=(target[0]+target[1])/2;
+ const wanted=Number($('count').value);
+ const hookRe=/\b(you won't believe|the truth is|here's why|what happened|the biggest mistake|secret|shocking|never|always|but|however|because|actually|surprisingly|the problem|the reason|mistake|warning|important|imagine|why|how|what if|finally|incredible|best|worst|first time|nobody|everyone|must|should|don't|didn't|can't|free|save|money|danger|fail|success|result|lesson|tip|trick|remember|difference|compared|versus|vs\.?)\b/i;
+ const emotionRe=/\b(amazing|terrible|crazy|unbelievable|angry|afraid|love|hate|fear|excited|worried|shocked|surprised|fail|failure|success|win|lost|dangerous|beautiful|disaster|perfect|worst|best|problem|solution|mistake|secret|truth|revealed|finally|unexpected|warning|regret|pain|easy|hard)\b/i;
+ const usefulRe=/\b(step|tip|trick|learn|guide|how to|you need to|you can|should|must|solution|fix|method|way to|reason|benefit|cost|price|save|avoid|instead|first|second|third|important|remember|rule|example)\b/i;
+ const questionRe=/\?|\b(why|how|what|when|where|who|which)\b/i;
+ const windows=[];
+ // Slide through transcript in short increments, not just one window per starting line.
+ // This supplies many candidates even when the transcript has a sparse set of timestamps.
+ for(let i=0;i<rows.length;i++){
+   const start=rows[i].sec;
+   let endIndex=i+1;
+   while(endIndex<rows.length && rows[endIndex].sec-start<targetSec)endIndex++;
+   if(endIndex>=rows.length)endIndex=rows.length-1;
+   let segment=rows.slice(i,endIndex+1);
+   let duration=segment[segment.length-1].sec-start;
+   // If transcript is sparse, take the next several lines so the candidate remains useful.
+   if(duration<Math.max(10,target[0]*0.5)){
+     const fallbackEnd=Math.min(rows.length-1,i+Math.max(2,Math.ceil(targetSec/12)));
+     segment=rows.slice(i,fallbackEnd+1);
+     duration=segment[segment.length-1].sec-start;
+   }
+   if(duration<5)continue;
+   const text=segment.map(r=>r.text).join(' ');
+   const first=segment.slice(0,Math.min(2,segment.length)).map(r=>r.text).join(' ');
+   let score=35;
+   if(hookRe.test(first))score+=22;
+   if(questionRe.test(first))score+=8;
+   if(emotionRe.test(text))score+=14;
+   if(usefulRe.test(text))score+=12;
+   if(/\d/.test(text))score+=5;
+   if(text.length>120 && text.length<1800)score+=7;
+   if(/\b(so yeah|anyway|like and subscribe|welcome back|good morning|um|uh)\b/i.test(first))score-=10;
+   if(/\b(in conclusion|to summarize|that's all|thank you for watching)\b/i.test(text))score-=8;
+   score=Math.max(1,Math.min(98,score));
+   const titleText=first.split(/[.!?]/)[0].trim();
+   windows.push({start_seconds:start,end_seconds:segment[segment.length-1].sec,score,title:(titleText||'Potential highlight').slice(0,85),hook:first.slice(0,190),reason:`Heuristic score based on ${hookRe.test(first)?'hook language, ':''}${emotionRe.test(text)?'emotional/surprise cues, ':''}${usefulRe.test(text)?'practical-value cues, ':''}${questionRe.test(first)?'curiosity/question cues, ':''}and transcript structure. Review manually.`,category:emotionRe.test(text)?'emotion':usefulRe.test(text)?'useful':questionRe.test(first)?'curiosity':'highlight',confidence:'medium'});
+ }
+ // Prefer higher scores, but reject near-duplicate/overlapping time windows.
+ windows.sort((a,b)=>b.score-a.score);
+ const chosen=[];
+ const minGap=Math.max(8,Math.min(20,target[0]*0.35));
+ for(const c of windows){
+   if(chosen.every(x=>c.start_seconds>=x.end_seconds+minGap || c.end_seconds<=x.start_seconds-minGap))chosen.push(c);
+   if(chosen.length>=wanted)break;
+ }
+ // If overlap filtering leaves too few, fill from the remaining best-scored candidates
+ // while still avoiding exact duplicates; this guarantees the requested count whenever
+ // enough distinct start timestamps are available.
+ if(chosen.length<wanted){
+   for(const c of windows){
+     if(chosen.some(x=>x.start_seconds===c.start_seconds))continue;
+     chosen.push(c);
+     if(chosen.length>=wanted)break;
+   }
+ }
+ if(chosen.length<wanted){
+   // Last-resort candidate generation: build a window from each timestamp anchor,
+   // which makes the selected clip count independent of score ties or overlap filters.
+   for(let i=0;i<rows.length && chosen.length<wanted;i++){
+     const start=rows[i].sec;
+     if(chosen.some(x=>x.start_seconds===start))continue;
+     let j=i+1;
+     while(j<rows.length && rows[j].sec-start<targetSec)j++;
+     if(j>=rows.length)j=rows.length-1;
+     const seg=rows.slice(i,j+1);
+     if(!seg.length)continue;
+     const first=seg.slice(0,2).map(r=>r.text).join(' ');
+     const full=seg.map(r=>r.text).join(' ');
+     let score=30+(hookRe.test(first)?20:0)+(emotionRe.test(full)?12:0)+(usefulRe.test(full)?10:0)+(questionRe.test(first)?6:0);
+     chosen.push({start_seconds:start,end_seconds:seg[seg.length-1].sec,score:Math.min(98,score),title:(first.split(/[.!?]/)[0]||'Potential highlight').slice(0,85),hook:first.slice(0,190),reason:'Additional distinct timestamped candidate added to satisfy the selected clip count. Review manually.',category:'highlight',confidence:'low'});
+   }
+ }
+ if(chosen.length<wanted)throw Error(`The transcript only has enough distinct timestamped moments for ${chosen.length} clips. Try a longer video or a fuller transcript, or reduce the requested clip count.`);
+ chosen.sort((a,b)=>b.score-a.score);
+ return chosen.slice(0,wanted).map((c,i)=>({...c,rank:i+1}));
+}
+function render(items){
+ ranked=items;
+ const list=$('cliplist');list.innerHTML='';
+ items.forEach((c,i)=>{
+   const row=document.createElement('article');row.className='clip';
+   const top=document.createElement('div');top.className='cliptop';
+   const sc=document.createElement('div');sc.className='score';sc.textContent=Number.isFinite(Number(c.score))?Math.round(c.score):'—';
+   const body=document.createElement('div');
+   const h=document.createElement('h3');h.textContent='Clip '+(c.rank||i+1);body.appendChild(h);
+   const p=document.createElement('p');p.textContent=timeStr(c.start_seconds)+' – '+timeStr(c.end_seconds)+' · '+(c.confidence||'heuristic')+' confidence';body.appendChild(p);
+   const videoBtn=document.createElement('button');videoBtn.className='btn primary';videoBtn.type='button';videoBtn.textContent='⬇ Download Video Clip';videoBtn.style.cssText='font-size:12px;padding:10px;margin:0 0 8px';videoBtn.onclick=()=>downloadVideoClip(c,i+1);body.appendChild(videoBtn);
+   const why=document.createElement('p');why.textContent=c.reason||'';body.appendChild(why);
+   if(c.hook){const hook=document.createElement('p');hook.textContent='Transcript excerpt: “'+c.hook+'”';body.appendChild(hook)}
+   const tag=document.createElement('span');tag.className='tag';tag.textContent=c.category||'highlight';body.appendChild(tag);
+   const a=document.createElement('a');const base=$('url').value.trim();a.href=base+(base.includes('?')?'&':'?')+'t='+Math.max(0,Math.floor(Number(c.start_seconds)||0))+'s';a.target='_blank';a.rel='noopener';a.textContent='▶ Open YouTube at '+timeStr(c.start_seconds);body.appendChild(document.createElement('br'));body.appendChild(a);
+   top.append(sc,body);row.appendChild(top);list.appendChild(row);
+ });
+ $('results').classList.add('show');$('results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+function showRenderStatus(msg,kind=''){const e=$('renderStatus');e.textContent=msg;e.className='status show '+kind;}
+$('sourceVideo').addEventListener('change',()=>{const f=$('sourceVideo').files?.[0];if(!f)return;const v=$('sourcePlayer');if(v.src)URL.revokeObjectURL(v.src);v.src=URL.createObjectURL(f);v.load();$('fileHint').textContent='Selected: '+f.name+' ('+(f.size/1024/1024).toFixed(1)+' MB). Loading video metadata…';v.onloadedmetadata=()=>{$('fileHint').textContent='Video ready: '+f.name+' · duration '+timeStr(v.duration)+'. Tap Download Video Clip on a highlight. Exported video has no text overlays.'};});
+function waitEvent(el,event){return new Promise((resolve,reject)=>{const ok=()=>{cleanup();resolve()};const bad=()=>{cleanup();reject(new Error('Video load/playback error. Try another source video file.'))};function cleanup(){el.removeEventListener(event,ok);el.removeEventListener('error',bad)}el.addEventListener(event,ok,{once:true});el.addEventListener('error',bad,{once:true})})}
+function drawCover(ctx,video,x,y,w,h,blur=false){const scale=Math.max(w/video.videoWidth,h/video.videoHeight),dw=video.videoWidth*scale,dh=video.videoHeight*scale;ctx.save();if(blur){ctx.filter='blur(28px)';ctx.globalAlpha=.8}ctx.drawImage(video,x+(w-dw)/2,y+(h-dh)/2,dw,dh);ctx.restore();}
+let ffmpegInstance=null, ffmpegLoaded=false, ffmpegLoadPromise=null;
+async function getFFmpeg(){
+ if(ffmpegLoaded)return ffmpegInstance;
+ if(ffmpegLoadPromise)return ffmpegLoadPromise;
+ ffmpegLoadPromise=(async()=>{
+  showRenderStatus('Loading MP4 encoder components… first use needs an internet connection.');
+  const {FFmpeg}=await import('https://unpkg.com/@ffmpeg/ffmpeg@0.12.10/dist/esm/index.js');
+  const {toBlobURL}=await import('https://unpkg.com/@ffmpeg/util@0.12.1/dist/esm/index.js');
+  const instance=new FFmpeg();
+  instance.on('progress',({progress})=>{
+   const p=Math.round(Math.max(0,Math.min(1,progress||0))*100);
+   showRenderStatus('Encoding MP4… '+p+'%. Keep this page open.');
+  });
+  const base='https://unpkg.com/@ffmpeg/core@0.12.6/dist/umd';
+  const pkg='https://unpkg.com/@ffmpeg/ffmpeg@0.12.10/dist/esm/';
+  // A file:// page has a null origin. Give FFmpeg's module worker a blob URL
+  // and rewrite its relative module imports to absolute CDN URLs.
+  let workerURL=null, workerError=null;
+  const workerSources=[
+   'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.12.10/dist/esm/worker.js',
+   pkg+'worker.js'
+  ];
+  for(const workerSource of workerSources){
+   try{
+    const wr=await fetch(workerSource,{mode:'cors',cache:'force-cache'});
+    if(!wr.ok)throw new Error('Worker CDN returned HTTP '+wr.status);
+    let workerText=await wr.text();
+    if(!workerText.trim())throw new Error('Worker script was empty.');
+    const workerBase=workerSource.slice(0,workerSource.lastIndexOf('/')+1);
+    workerText=workerText.replace(/from\s+(['"])(\.\/[^'"]+)\1/g,(_,q,rel)=>'from '+q+workerBase+rel.replace(/^\.\//,'')+q);
+    workerURL=await toBlobURL(workerText,'text/javascript');
+    break;
+   }catch(e){workerError=e;}
+  }
+  if(!workerURL){
+   throw new Error('The browser blocked the FFmpeg worker from this downloaded HTML file. Open the HTML from an HTTPS host (for example, a private GitHub Pages or Netlify site) and retry. Changing clip length or resolution will not fix worker loading. Details: '+(workerError?.message||'worker download failed'));
+  }
+  await instance.load({
+   classWorkerURL:workerURL,
+   coreURL:await toBlobURL(base+'/ffmpeg-core.js','text/javascript'),
+   wasmURL:await toBlobURL(base+'/ffmpeg-core.wasm','application/wasm')
+  });
+  ffmpegInstance=instance;ffmpegLoaded=true;return instance;
+ })();
+ try{return await ffmpegLoadPromise;}catch(e){ffmpegLoadPromise=null;throw e;}
+}
+function safeFilePart(name){return String(name||'video').replace(/\.[^.]+$/,'').replace(/[^a-z0-9_-]+/gi,'_').slice(0,45)||'video';}
+async function downloadVideoClip(c,index){
+ const file=$('sourceVideo').files?.[0],video=$('sourcePlayer');
+ if(!file){showRenderStatus('A YouTube link finds timestamps but does not provide the video file. Select the original video file you are authorized to edit.','warn');return;}
+ if(!Number.isFinite(Number(c.start_seconds))||!Number.isFinite(Number(c.end_seconds))){showRenderStatus('This highlight has invalid timestamps. Please analyze the transcript again.','error');return;}
+ const start=Math.max(0,Number(c.start_seconds)||0);
+ const end=Math.max(start+1,Number(c.end_seconds)||start+30);
+ if(video.duration&&start>=video.duration){showRenderStatus('This timestamp is beyond the selected source video. Select the matching video file.','error');return;}
+ const button=Array.from(document.querySelectorAll('.clip .btn')).find(b=>b.textContent.includes('Download Video Clip')&&!b.disabled);
+ if(button)button.disabled=true;
+ try{
+  showRenderStatus('Preparing MP4 export…');
+  const ff=await getFFmpeg();
+  const {fetchFile}=await import('https://unpkg.com/@ffmpeg/util@0.12.1/dist/esm/index.js');
+  const inputName='clipforge_input_'+Date.now()+'.bin';
+  const outputName='clipforge_output_'+Date.now()+'.mp4';
+  await ff.writeFile(inputName,await fetchFile(file));
+  const quality=$('qualityMode').value;
+  const w=quality==='max'?1440:1080,h=quality==='max'?2560:1920;
+  let filter;
+  if($('fitMode').value==='blur'){
+   filter=`[0:v]split=2[bg][fg];[bg]scale=${w}:${h}:force_original_aspect_ratio=increase,crop=${w}:${h},boxblur=24:2,eq=brightness=-0.25[blurred];[fg]scale=${w}:${h}:force_original_aspect_ratio=decrease[sharp];[blurred][sharp]overlay=(W-w)/2:(H-h)/2,setsar=1,format=yuv420p[vout]`;
+  }else{
+   filter=`[0:v]scale=${w}:${h}:force_original_aspect_ratio=increase,crop=${w}:${h},setsar=1,format=yuv420p[vout]`;
+  }
+  showRenderStatus('Encoding MP4 with H.264 video and AAC audio. This may take a while on a phone…');
+  const args=[
+   '-ss',String(start),'-i',inputName,'-t',String(end-start),
+   '-filter_complex',filter,'-map','[vout]','-map','0:a:0?',
+   '-c:v','libx264','-preset','ultrafast','-crf',quality==='max'?'21':'23',
+   '-c:a','aac','-b:a','128k','-ac','2','-movflags','+faststart','-y',outputName
+  ];
+  const code=await ff.exec(args);
+  if(code!==0)throw new Error('MP4 encoding failed. Try a shorter clip or choose 1080p High Quality.');
+  const data=await ff.readFile(outputName);
+  if(!data||!data.length)throw new Error('The MP4 file was empty. Try again with a shorter clip.');
+  const blob=new Blob([data],{type:'video/mp4'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;
+  a.download='ClipForge_Clip_'+String(index).padStart(2,'0')+'_9x16_'+(quality==='max'?'1440p':'1080p')+'.mp4';
+  document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),120000);
+  showRenderStatus('MP4 download started · '+w+' × '+h+' · '+(blob.size/1024/1024).toFixed(1)+' MB · audio included when present in the source.','good');
+  try{await ff.deleteFile(inputName);await ff.deleteFile(outputName);}catch(e){}
+ }catch(e){
+  showRenderStatus((e.message||'MP4 export failed.')+'\\nTry 1080p High Quality and a shorter clip. Large videos may exceed mobile memory.','error');
+ }finally{
+  if(button)button.disabled=false;
+  video.pause();
+ }
+}
+
+async function run(manual=false){try{let transcript;if(manual){transcript=$('transcript').value.trim();if(transcript.length<30)throw Error('Paste a timestamped transcript first.')}else{if(!isYT($('url').value.trim()))throw Error('Enter a valid YouTube link first.');if(!$('supakey').value.trim())throw Error('Enter your Supadata API key first.');setStatus('Fetching timestamped transcript…');prog(12);transcript=await getTranscript();$('transcript').value=transcript;}setStatus('Transcript received. Ranking potential highlights…');prog(65);const out=await rankLocally(transcript);prog(100);setStatus('Ranking complete. Review the timestamps. Actual video export requires a source video file.','good');render(out)}catch(e){setStatus(e.message||String(e),'error');$('progress').classList.remove('show')}}
+$('analyze').onclick=()=>run(false);$('manual').onclick=()=>run(true);
+function exportText(){return 'ClipForge Mobile — Shorts Ideas\nSource: '+$('url').value+'\n\n'+ranked.map((c,i)=>`${i+1}. ${c.title||'Highlight'}\nTime: ${timeStr(c.start_seconds)} - ${timeStr(c.end_seconds)}\nScore: ${c.score}/100 | ${c.category||''} | confidence: ${c.confidence||''}\nHook: ${c.hook||''}\nReason: ${c.reason||''}\n`).join('\n')}
+$('copy').onclick=async()=>{try{await navigator.clipboard.writeText(ranked.map((c,i)=>`${i+1}. ${timeStr(c.start_seconds)}-${timeStr(c.end_seconds)} | ${c.title}`).join('\n'));setStatus('Clip timestamps copied.','good')}catch(e){setStatus('Clipboard is unavailable in this browser. Download the clip list instead.','warn')}};
+$('export').onclick=()=>{const blob=new Blob([exportText()],{type:'text/plain;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='clipforge_highlights.txt';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+</script></body></html>
